@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Javascript Clock exercise</title>
+      <script>
+          //function to find current time
+          function displayTime (){
+            var now = new Date ();
+          //grabs element from html based on it's Id
+            var elt = document.getElementById('clock');
+    //displays time in element
+            elt.innerHTML = now.toLocaleTimeString();
+            //repeat in one second
+            setTimeout(displayTime, 1000);
+          }
+
+          //this triggers function displayTime on page load
+          window.onload = displayTime;
+      </script>
+      <style>
+        #clock{
+          font family: serif;
+          background: #ddf;
+          padding:10px;
+          border: solid blue 2px;
+          border-radius:10px;
+
+        }
+
+      </style>
+
+    </head>
+    <body>
+        <h1>Digital Clock that a newbie built!</h1>
+        <span id="clock"></span>
+
+    </body>
+  </html>
